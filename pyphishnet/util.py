@@ -26,7 +26,7 @@ def create_pickle_object(obj, pickle_name, file_path='./pickle_objects/'):
     if isinstance(pickle_name, str) and isinstance(file_path, str):
 
         # verify .pickle suffix
-        if pickle_name[-7:] != '.pickle':
+        if pickle_name[-4:] != '.pkl':
             raise ValueError('The pickle_name argument must end with a .pickle suffix.')
 
         # build full path
@@ -131,7 +131,7 @@ def parse_setlist_field(html_response_string):
 
             full_setlist.extend(combined_set)
 
-    return ', '.join(full_setlist)
+    return '|'.join(full_setlist)
 
 def parse_setlist_field2(html_response_string):
     """Parse the HTML response of a "setlist" field from the get_setlist() API wrapper
